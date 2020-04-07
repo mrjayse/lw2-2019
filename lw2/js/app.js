@@ -1,7 +1,7 @@
 window.onload = function () {
   var btn = document.getElementById('button-add');
   var txtArea = document.getElementById('textarea');
-  
+
   // add task handler
   btn.onclick = function () {
     // add element to UI
@@ -54,48 +54,38 @@ window.onload = function () {
 
 
   // TODO: filter tasks
-    var defaultDisplayValue = "block";
-    var currentFilter = "ShowAll";
 
-    var filterShowAll = document.getElementById('filter-show-all');
-    filterShowAll.onclick = function () {
-      if (currentFilter != "ShowAll")
-      {
-        currentFilter = "ShowAll";
-        var taskNodes = document.getElementsByClassName("new checkbox");
-        var label;
+  var filterShowAll = document.getElementById('filter-show-all');
+  filterShowAll.onclick = function () {
+    var taskNodes = document.getElementsByClassName("new checkbox");
+    var label;
 
-        for (var i = 0; i < taskNodes.length; i++) {
-          label = taskNodes[i].getElementsByTagName("label");
-          taskNodes[i].style.display = defaultDisplayValue;
-        }
+    for (var i = 0; i < taskNodes.length; i++) {
+      label = taskNodes[i].getElementsByTagName("label");
+      taskNodes[i].style.display = "block";
+    }
 
-        console.log('show all');
-      }
-    };
+    console.log('show all');
+  }
 
-    var filterShowCompleted = document.getElementById('filter-show-completed');
-    filterShowCompleted.onclick = function () {
-      if (currentFilter != "ShowCompleted")
-      {
-        currentFilter = "ShowCompleted";
-        var taskNodes = document.getElementsByClassName("new checkbox");
-        var label;
+  var filterShowCompleted = document.getElementById('filter-show-completed');
+  filterShowCompleted.onclick = function () {
+    var taskNodes = document.getElementsByClassName("new checkbox");
+    var label;
 
-        for (var i = 0; i < taskNodes.length; i++) {
-          label = taskNodes[i].getElementsByTagName("label");
-          if (label[0].getElementsByTagName("input")[0].checked === true)
-            taskNodes[i].style.display = defaultDisplayValue
-            else
-            taskNodes[i].style.display = "none";
-        }
+    for (var i = 0; i < taskNodes.length; i++) {
+      label = taskNodes[i].getElementsByTagName("label");
+      if (label[0].getElementsByTagName("input")[0].checked === true)
+        taskNodes[i].style.display = "block"
+      else
+        taskNodes[i].style.display = "none";
 
-        console.log('show completed');
-      }
-    };
+      console.log('show completed');
+    }
+  };
 
-    // var filterShowCompleted = document.getElementById('filter-show-removed');
-    // filterShowRemoved.onclick = function () {
-    //   console.log('show removed');
-    // };
+  // var filterShowCompleted = document.getElementById('filter-show-removed');
+  // filterShowRemoved.onclick = function () {
+  //   console.log('show removed');
+  // };
 }
