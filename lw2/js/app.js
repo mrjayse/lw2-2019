@@ -20,7 +20,7 @@ window.onload = function () {
     var icon = document.createElement('i');
     icon.classList.add('glyphicon', 'glyphicon-trash', 'icon', 'remove-card');
     newTask.append(icon);
-    txtArea.value = "";
+    txtArea.value = '';
 
     // register events here:
 
@@ -40,13 +40,13 @@ window.onload = function () {
   // TODO: complete all handler here
   var completeAll = document.getElementById('complete-all');
   completeAll.onclick = function () {
-    var taskNodes = document.getElementsByClassName("new checkbox");
+    var taskNodes = document.getElementsByClassName('new checkbox');
     var label;
 
     for (var i = 0; i < taskNodes.length; i++) {
-      label = taskNodes[i].getElementsByTagName("label");
-      label[0].classList.toggle("labeled");
-      label[0].getElementsByTagName("input")[0].checked = (label[0].getElementsByTagName("input")[0].checked === false) ? true : false;
+      label = taskNodes[i].getElementsByTagName('label');
+      label[0].classList.toggle('labeled');
+      label[0].getElementsByTagName('input')[0].checked = (label[0].getElementsByTagName('input')[0].checked === false) ? true : false;
     }
 
     console.log('complete all');
@@ -57,28 +57,28 @@ window.onload = function () {
 
   var filterShowAll = document.getElementById('filter-show-all');
   filterShowAll.onclick = function () {
-    var taskNodes = document.getElementsByClassName("new checkbox");
+    var taskNodes = document.getElementsByClassName('new checkbox');
     var label;
 
     for (var i = 0; i < taskNodes.length; i++) {
-      label = taskNodes[i].getElementsByTagName("label");
-      taskNodes[i].style.display = "block";
+      label = taskNodes[i].getElementsByTagName('label');
+      taskNodes[i].style.display = 'block';
     }
 
     console.log('show all');
-  }
+  };
 
   var filterShowCompleted = document.getElementById('filter-show-completed');
   filterShowCompleted.onclick = function () {
-    var taskNodes = document.getElementsByClassName("new checkbox");
+    var taskNodes = document.getElementsByClassName('new checkbox');
     var label;
 
     for (var i = 0; i < taskNodes.length; i++) {
-      label = taskNodes[i].getElementsByTagName("label");
-      if (label[0].getElementsByTagName("input")[0].checked === true)
-        taskNodes[i].style.display = "block"
+      label = taskNodes[i].getElementsByTagName('label');
+      if (label[0].getElementsByTagName('input')[0].checked === true)
+        taskNodes[i].style.display = 'block';
       else
-        taskNodes[i].style.display = "none";
+        taskNodes[i].style.display = 'none';
 
       console.log('show completed');
     }
@@ -88,4 +88,4 @@ window.onload = function () {
   // filterShowRemoved.onclick = function () {
   //   console.log('show removed');
   // };
-}
+};
